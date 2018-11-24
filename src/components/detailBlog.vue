@@ -1,8 +1,8 @@
 <template>
    <div id="show-blog-template" v-theme:column="'isi-yanglain'">  
      <h1>Detail Blogs Body</h1>
-     <input type="text" v-model="search" placeholder="Search" />
-     <div v-for="blog in filterBlogs" class="single-blog">
+     <input type="text" v-model="search" placeholder="Search Body" />
+     <div v-for="blog in filterBlogslain" class="single-blog">
      	<p v-koneng> {{ blog.body | to-lowercase}} </p>
      </div>
   </div> 

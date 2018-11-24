@@ -1,7 +1,7 @@
 <template>
    <div id="show-blog-template" v-theme:column="'isi-yanglain'">  
      <h1>All Blogs</h1>
-     <input type="text" v-model="search" placeholder="Search" />
+     <input type="text" v-model="search" placeholder="Search Title" />
      <div v-for="blog in filterBlogs" class="single-blog">
      	<router-link v-bind:to="'/blog/'+ blog.id"><h2 v-rainbow> {{ blog.title | to-uppercase }} </h2></router-link>
      	<p v-koneng> {{ blog.body | dibatasi | to-lowercase}} </p>
