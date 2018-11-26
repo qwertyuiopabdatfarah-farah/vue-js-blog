@@ -1,0 +1,42 @@
+-create database if not exists nama_databasenya;
+-show databases;
+-use nama_databasenya;
+-create table if not exists users(id int(21) unsigned auto_increment primary key, nim id(21) unique not null, name varchar(100) not null);
+-describe users;
+-alter table users modify name varchar(100) not null;
+-alter table users change name name_full varchar(11) null;
+-alter table users rename to user_baru;
+-alter table users add jenis_kelamin enum('L', 'P') default 'P';
+-alter table users add alamat varchar(20) not null;
+-alter table users drop alamat;
+-insert into users (nama_kolom1, nama_kolom2, nama_kolom3) values ('isi_kolom1', 'isi_kolom2', isi_kolom3);
+-truncate users;
+-insert ignore into users //bila menginput lebih dari satu values, tapi data sudah ada didal maka yg lain tetap masuk;
+-SELECT nama_kolom1, nama_kolom2,FROM nama_tabel;
+-SELECT nama_kolom1, nama_kolom2,FROM nama_tabel limit 1;
+-SELECT nama_kolom1, nama_kolom2,FROM nama_tabel WHERE kondisi;
+-SELECT * FROM nama_table WHERE nama_kolom1 LIKE 'S%';
+-SELECT * FROM nama_table WHERE nama_kolom1 LIKE '%i' OR nama_kolom2 LIKE 'm%';
+-SELECT * FROM nama_tabel WHERE nama_kolom1 REGEXP '^[ms].*[aiueo]$';
+-SELECT CONCAT(kode_matkul, nama_matkul) FROM mata_kuliah;
+-SELECT LOWER(nama_dosen) FROM daftar_dosen;
+-SELECT UPPER(nama_dosen) FROM daftar_dosen;
+-SELECT UPPER(nama_dosen) AS 'Nama Dosen' FROM daftar_dosen;
+-SELECT nama_matkul,jumlah_SKS,nama_dosen FROM mata_kuliah INNER JOIN daftar_dosen ON mata_kuliah.NIP_dosen=daftar_dosen.NIP_dosen;
+-SELECT nama_matkul,jumlah_SKS,nama_dosen FROM mata_kuliah AS ma INNER JOIN daftar_dosen AS da ON ma.NIP_dosen=da.NIP_dosen;
+-DELETE from daftar_dosen ORDER BY nama_dosen DESC LIMIT 3;
+-DELETE from daftar_dosen WHERE nama_dosen = 'Sabrina Sari';
+-DELETE FROM daftar_dosen;
+-UPDATE daftar_dosen SET no_hp ='085298710065', alamat = 'Jl. Raya' WHERE nama_dosen='Sabrina Sari';
+-UPDATE daftar_dosen SET no_hp ='085298710065', alamat = 'Jl. Raya' WHERE id=1;
+-UPDATE daftar_dosen SET alamat ='Surabaya' WHERE nama_dosen='Rubin Hadi' OR NIP_dosen='1080432007' OR no_hp='0812345234';
+-UPDATE daftar_dosen SET no_hp='085278790005'; //seluruh table
+UPDATE daftar_dosen SET nama_dosen = UPPER (nama_dosen //Mengubah Huruf Kolom Tabel Secara Permanen
+-SELECT DISTINCT nama_kolom FROM nama_tabel;
+variabel
+-SELECT @kota := alamat FROM daftar_dosen WHERE nama_dosen = 'Maya Ari Putri';
+-SELECT * FROM daftar_dosen WHERE alamat = @kota;
+-CREATE TABLE daftar_dosen_baru LIKE daftar_dosen; //mengcopy table
+-INSERT INTO daftar_dosen_baru SELECT * FROM daftar_dosen; //mengcopy isi table
+-INSERT INTO daftar_dosen_baru SELECT * FROM daftar_dosen WHERE alamat = 'Palembang';
+-DATE_FORMAT(nama_kolom, ‘string format’) = SELECT DATE_FORMAT(dt, '%d/%m/%Y') FROM belajar_date;
