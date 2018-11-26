@@ -2,8 +2,8 @@
    <div id="link">  
      <nav>
        <ul>
-         <li><router-link to="/" exact>Blog</router-link></li>
-         <li><router-link to="/add" exact>addBlog</router-link></li>
+         <li><router-link v-bind:to="{ name: 'data' }" exact>Blog</router-link></li>
+         <li><router-link v-bind:to="{ name: 'add' }" exact>addBlog</router-link></li>
        </ul>
      </nav>
      </div>

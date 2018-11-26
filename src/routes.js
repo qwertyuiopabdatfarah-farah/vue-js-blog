@@ -4,7 +4,8 @@ import singleBlog from './components/singleBlog.vue'
 
 
 export default [
-  { path: '/', component:showBlog},
-  { path: '/add', component:addBlog},
-  { path: '/blog/:id', component:singleBlog},
+  { path: '/', 		   name: 'data',   component:showBlog},
+  { path: '/add', 	   name: 'add',    component:addBlog},
+  { path: '/blog/:id', name: 'detail', component:singleBlog},
+  { path: '*',         redirect: '/' },
 ]
